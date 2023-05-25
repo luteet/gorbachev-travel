@@ -1,0 +1,55 @@
+.tour {
+
+	display: grid;
+	@include _992 {
+		grid-template-columns: auto 55%;
+	}
+
+	// .tour__title
+
+	&__title {
+		padding-right: 40px;
+		@media (min-width: 1200px) {
+			padding-right: 126px;
+		}
+	}
+
+	// .tour__list
+
+	&__list {
+		margin-top: 20px;
+		@include _992 {
+			margin-top: 0;
+		}
+		li {
+			padding: 25px 5px;
+			@include _768 {
+				padding: 25px;
+				font-size: 1.125rem;
+			}
+			@media (min-width: 1200px) {
+				padding: 45px 52px;
+				font-size: 1.25rem;
+			}
+			border-bottom: 1.5px solid var(--accent);
+
+			svg {
+				flex: 0 0 25px;
+				margin-right: 20px;
+				@include _768 {
+					flex: 0 0 39px;
+					margin-right: 33px;
+				}
+				fill: var(--accent);
+			}
+
+			display: flex;
+			align-items: center;
+
+			font-size: 0.875rem;
+			line-height: 140%;
+
+			color: #292F40;
+		}
+	}
+}

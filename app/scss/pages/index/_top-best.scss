@@ -1,0 +1,160 @@
+.top-best {
+
+	// .top-best__header
+
+	&__header {
+		display: grid;
+		@include _992 {
+			grid-template-columns: 50% auto;
+		}
+		@media (min-width: 1200px) {
+			grid-template-columns: auto minmax(500px, 808px);
+		}
+	}
+
+	// .top-best__title
+
+	&__title {
+		@include _992 {
+			grid-column: 2;
+		}
+	}
+
+	// .top-best__slider
+
+	&__slider {
+
+		margin-top: 40px;
+		@include _992 {
+			margin-top: 92px;
+		}
+
+		// .top-best__slider--track
+
+		&--track {
+			overflow: visible;
+		}
+
+		// .top-best__slider--list
+
+		&--list {
+			counter-reset: top_best_slide_number;
+		}
+
+		// .top-best__slider--slide
+
+		&--slide {
+			
+		}
+	}
+
+	// .top-best__slide
+
+	&__slide {
+
+		width: 238px;
+
+		@include _550 {
+			width: 350px;
+		}
+		
+		@include _768 {
+			width: 500px;
+		}
+		
+		@include _992 {
+			width: 731px;
+		}
+
+		&:nth-child(even) {
+			width: 155px;
+
+			@include _550 {
+				width: 230px;
+			}
+			
+			@include _768 {
+				width: 329px;
+			}
+			
+			@include _992 {
+				width: 478px;
+			}
+		}
+
+		&:nth-child(even) &--image {
+			padding-top: 100%;
+		}
+
+		// .top-best__slide--image
+
+		&--image {
+			width: 100%; 
+			position: relative;
+			padding-top: 65.4%;
+
+			img {
+				position: absolute;
+				left: 0; top: 0;
+				width: 100%; height: 100%;
+				object-fit: cover;
+				border-radius: min(25px, 2.5vw);
+				background: #D3D3D3;
+			}
+		}
+
+		// .top-best__slide--text
+
+		&--text {
+			margin-top: 24px;
+			font-weight: 500;
+			font-size: 0.9375rem;
+			padding-right: 20px;
+			@include _550 {
+				font-size: 1.125rem;
+				padding-right: 0;
+			}
+			
+			@include _768 {
+				font-size: 1.5rem;
+				margin-top: 50px;
+			}
+			
+			@include _992 {
+				font-size: 2.25rem;
+				margin-top: 72px;
+			}
+
+			line-height: 119.444444%;
+			text-transform: uppercase;
+			color: var(--accent);
+
+			display: flex;
+			
+			&::before {
+				counter-increment: top_best_slide_number;
+				content: "0"counter(top_best_slide_number);
+				margin-right: 12px;
+
+				font-size: 1.25rem;
+				line-height: 116%;
+				text-transform: uppercase;
+				color: var(--accent);
+				
+				@include _550 {
+					font-size: 2rem;
+				}
+				
+				@include _768 {
+					font-size: 3rem;
+					margin-right: 32px;
+				}
+				
+				@include _992 {
+					font-size: 4rem;
+				}
+			}
+			
+		}
+	}
+}

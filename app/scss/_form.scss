@@ -1,0 +1,84 @@
+input, textarea {
+	&::placeholder {
+		transition: opacity .2s ease;
+		opacity: 1;
+	}
+	
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+.input {
+	border: 1.5px solid #FFFFFF;
+	border-radius: 67px;
+	background: transparent;
+	padding: 16px 20px;
+	color: var(--white);
+	line-height: 100%;
+	font-size: 0.875rem;
+	@include _550 {
+		font-size: 1rem;
+	}
+	
+	@include _768 {
+		font-size: 1.125rem;
+		padding: 30px 34px;
+	}
+	
+	@include _992 {
+		font-size: 1.25rem;
+	}
+	&::placeholder {
+		color: var(--white);
+	}
+}
+
+.tel-constructor-input {
+	transition: border-color .2s ease;
+	outline: none;
+
+	&._error {
+		border-color: tomato;
+	}
+}
+  
+.tel-constructor-error-message {
+	position: absolute;
+
+	color: white;
+	font-family: Arial;
+	font-weight: 500;
+	font-size: 16px;
+
+	background: tomato;
+
+	padding: 10px 20px;
+	border-radius: 15px;
+
+	z-index: 10;
+
+	transition: opacity .2s ease;
+
+	transform: translate(-50%,calc(-100% - 7px));
+
+	opacity: 0;
+
+}
+
+.tel-constructor-error-message._visible {
+	opacity: 1;
+}
+
+.tel-constructor-error-message::before {
+	content: '';
+	position: absolute;
+	left: 50%; bottom: 0;
+	transform: translate(-50%,100%);
+
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid tomato;
+
+}
+			

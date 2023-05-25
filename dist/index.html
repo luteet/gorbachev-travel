@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.image-body {
+			width: 100%;
+			position: relative;
+		}
+
+		.image-body img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style-critical.min.css">
+	<link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'; this.onload=null;">
+	<script>
+		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+	</script>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<header class="header container">
+			<a href="/" class="header__logo">
+				<img src="img/logo.svg" alt="Logo" width="115" height="34" style="--width: 228px; --height: 67px;" loading="lazy" class="header__logo--img">
+			</a>
+		</header>
+
+		<main class="main">
+			<section class="hero container section-start">
+				<div class="hero__bg">
+					<picture>
+						<source srcset="img/index/hero/hero-image.avif" type="image/avif">
+						<source srcset="img/index/hero/hero-image.webp" type="image/webp">
+						<img src="img/index/hero/hero-image.jpg" alt="" width="0" height="0" loading="lazy">
+					</picture>
+				</div>
+				<h1 class="hero__title title">
+					Пробуждение <strong>На Мальдивах</strong> <span style="text-align: right;">с Алексеем Горбачевым</span>
+				</h1>
+				<div class="hero__application">
+					<strong class="hero__application--date">
+						<span>15-22</span> июня
+					</strong>
+					<a href="#get-details" class="hero__application--btn btn btn-to-scroll">
+						Подать заявку
+					</a>
+				</div>
+			</section>
+			<section class="tour container" id="tour">
+				<h2 class="tour__title title">
+					Этот тур для тебя, если ты хочешь:
+				</h2>
+				<ul class="tour__list">
+					<li>
+						<svg width="39" height="37" viewBox="0 0 39 37">
+							<use xlink:href="img/sprites.svg#star"></use>
+						</svg>
+						<span>
+							Увидеть свой путь и найти то, что тебя будет драйвить
+						</span>
+					</li>
+					<li>
+						<svg width="39" height="37" viewBox="0 0 39 37">
+							<use xlink:href="img/sprites.svg#star"></use>
+						</svg>
+						<span>
+							Отключиться от действующей реальности , посмотреть на свою жизнь глазами наблюдателя и понять то, что действительно важно
+						</span>
+					</li>
+					<li>
+						<svg width="39" height="37" viewBox="0 0 39 37">
+							<use xlink:href="img/sprites.svg#star"></use>
+						</svg>
+						<span>
+							Наполниться энергией, ресурсом и стать лучшей версией себя
+						</span>
+					</li>
+					<li>
+						<svg width="39" height="37" viewBox="0 0 39 37">
+							<use xlink:href="img/sprites.svg#star"></use>
+						</svg>
+						<span>
+							Попробовать самые эффективные практики по работе с состоянием и энергией
+						</span>
+					</li>
+					<li>
+						<svg width="39" height="37" viewBox="0 0 39 37">
+							<use xlink:href="img/sprites.svg#star"></use>
+						</svg>
+						<span>
+							Убрать все блоки и зажимы - телесные, психологические, ментальные
+						</span>
+					</li>
+					<li>
+						<svg width="39" height="37" viewBox="0 0 39 37">
+							<use xlink:href="img/sprites.svg#star"></use>
+						</svg>
+						<span>
+							Отдохнуть на Мальдивах с эксклюзивной программой и встречей с самыми редкими подводными обитателями Мальдив
+						</span>
+					</li>
+				</ul>
+			</section>
+			<section class="about-me container">
+				<div class="about-me__content">
+					<h2 class="about-me__title title">
+						Алексей Горбачев
+					</h2>
+					<h3 class="about-me__min-title min-title">
+						Несколько фактов:
+					</h3>
+					<ul class="about-me__list">
+						<li>
+							Мастер по ресурсному состоянию
+						</li>
+						<li>
+							Магистр психоанализа (Высшая школа экономики по специальности «Психоанализ и психоаналитическое бизнес-консультирование»)
+						</li>
+						<li>
+							Автор концепции «PROбуждение», марафон прошли более 5000 человек
+						</li>
+						<li>
+							Многодетный отец, 4 детей
+						</li>
+						<li>
+							Основатель культуры осознанного родительства в России
+						</li>
+						<li>
+							Автор книги «Ненавредители»
+						</li>
+					</ul>
+				</div>
+				<div class="about-me__image">
+					<div class="about-me__image--body image-body">
+						<picture>
+							<source srcset="img/index/about-me/about-me-image.avif" type="image/avif">
+							<source srcset="img/index/about-me/about-me-image.webp" type="image/webp">
+							<img src="img/index/about-me/about-me-image.jpg" alt="" width="808" height="625" loading="lazy">
+						</picture>
+					</div>
+				</div>
+			</section>
+			<section class="top-best container">
+				<div class="top-best__header">
+					<h2 class="top-best__title title">
+						Топ самых редких впечетлений мальдив одном путешествии
+					</h2>
+				</div>
+				<div class="top-best__slider splide">
+					<div class="top-best__slider--track splide__track">
+						<div class="top-best__slider--list splide__list">
+							<div class="top-best__slider--slide top-best__slide splide__slide">
+								<div class="top-best__slide--image">
+									<picture>
+										<source srcset="img/index/top-best/top-best-image-1.avif" type="image/avif">
+										<source srcset="img/index/top-best/top-best-image-1.webp" type="image/webp">
+										<img src="img/index/top-best/top-best-image-1.jpg" alt="" width="731" height="478" loading="lazy">
+									</picture>
+								</div>
+								<div class="top-best__slide--text">
+									ПОПЛАВАЕШЬ С РЕДКИМИ ДВУХМЕТРОВЫМИ МАНТАМИ
+								</div>
+							</div>
+							<div class="top-best__slider--slide top-best__slide splide__slide">
+								<div class="top-best__slide--image">
+									<picture>
+										<source srcset="img/index/top-best/top-best-image-2.avif" type="image/avif">
+										<source srcset="img/index/top-best/top-best-image-2.webp" type="image/webp">
+										<img src="img/index/top-best/top-best-image-2.jpg" alt="" width="478" height="478" loading="lazy">
+									</picture>
+								</div>
+								<div class="top-best__slide--text">
+									ОТПРАВИШЬСЯ НА САФАРИ С ДЕЛЬФИНАМИ
+								</div>
+							</div>
+							<div class="top-best__slider--slide top-best__slide splide__slide">
+								<div class="top-best__slide--image">
+									<picture>
+										<source srcset="img/index/top-best/top-best-image-3.avif" type="image/avif">
+										<source srcset="img/index/top-best/top-best-image-3.webp" type="image/webp">
+										<img src="img/index/top-best/top-best-image-3.jpg" alt="" width="731" height="478" loading="lazy">
+									</picture>
+								</div>
+								<div class="top-best__slide--text">
+									ПОПЛАВАЕШЬ С СОТНЕЙ АКУЛ-НЯНЕК (ЕДИНСТВЕННОЕ МЕСТО НА МАЛЬДИВАХ, ГДЕ ОНИ ОБИТАЮТ)
+								</div>
+							</div>
+							<div class="top-best__slider--slide top-best__slide splide__slide">
+								<div class="top-best__slide--image">
+									<picture>
+										<source srcset="img/index/top-best/top-best-image-4.avif" type="image/avif">
+										<source srcset="img/index/top-best/top-best-image-4.webp" type="image/webp">
+										<img src="img/index/top-best/top-best-image-4.jpg" alt="" width="478" height="478" loading="lazy">
+									</picture>
+								</div>
+								<div class="top-best__slide--text">
+									Отыщешь черепах
+								</div>
+							</div>
+							<div class="top-best__slider--slide top-best__slide splide__slide">
+								<div class="top-best__slide--image">
+									<picture>
+										<source srcset="img/index/top-best/top-best-image-5.avif" type="image/avif">
+										<source srcset="img/index/top-best/top-best-image-5.webp" type="image/webp">
+										<img src="img/index/top-best/top-best-image-5.jpg" alt="" width="731" height="478" loading="lazy">
+									</picture>
+								</div>
+								<div class="top-best__slide--text">
+									ПОНЫРЯЕШЬ У ЗАТОНУВШЕГО КОРАБЛЯ В ЖИВОПИСНОЙ ЛАГУНЕ
+								</div>
+							</div>
+							<div class="top-best__slider--slide top-best__slide splide__slide">
+								<div class="top-best__slide--image">
+									<picture>
+										<source srcset="img/index/top-best/top-best-image-6.avif" type="image/avif">
+										<source srcset="img/index/top-best/top-best-image-6.webp" type="image/webp">
+										<img src="img/index/top-best/top-best-image-6.jpg" alt="" width="478" height="478" loading="lazy">
+									</picture>
+								</div>
+								<div class="top-best__slide--text">
+									ПОПЛАВАЕШЬ С СОТНЕЙ СКАТОВ В СЕКРЕТНОЙ ЛОКАЦИИ
+								</div>
+							</div>
+							<div class="top-best__slider--slide top-best__slide splide__slide">
+								<div class="top-best__slide--image">
+									<picture>
+										<source srcset="img/index/top-best/top-best-image-7.avif" type="image/avif">
+										<source srcset="img/index/top-best/top-best-image-7.webp" type="image/webp">
+										<img src="img/index/top-best/top-best-image-7.jpg" alt="" width="731" height="478" loading="lazy">
+									</picture>
+								</div>
+								<div class="top-best__slide--text">
+									ОТДОХНЕШЬ НА ДЛИННОЙ ПЕСЧАНОЙ КОСЕ У ЗНАМЕНИТОГО РЕЗОРТА «ONE & ONLY»
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="our-island container" id="our-island">
+				<h2 class="our-island__title title">
+					Наш остров
+				</h2>
+				<div class="our-island__header">
+					<div class="our-island__rating">
+						<ul>
+							<li>
+								<svg width="39" height="37" viewBox="0 0 39 37">
+									<use xlink:href="img/sprites.svg#star"></use>
+								</svg>
+							</li>
+							<li>
+								<svg width="39" height="37" viewBox="0 0 39 37">
+									<use xlink:href="img/sprites.svg#star"></use>
+								</svg>
+							</li>
+							<li>
+								<svg width="39" height="37" viewBox="0 0 39 37">
+									<use xlink:href="img/sprites.svg#star"></use>
+								</svg>
+							</li>
+							<li>
+								<svg width="39" height="37" viewBox="0 0 39 37">
+									<use xlink:href="img/sprites.svg#star"></use>
+								</svg>
+							</li>
+							<li>
+								<svg width="39" height="37" viewBox="0 0 39 37">
+									<use xlink:href="img/sprites.svg#star"></use>
+								</svg>
+							</li>
+						</ul>
+						<b>
+							ЧАСТНЫЙ ОСТРОВ РЕЗОРТ «SAII LAGOon MALDIVES»
+						</b>
+					</div>
+					<div class="our-island__text">
+						<p>
+							7 дней ты проведёшь на территории премиального резорта <b>«Saii Lagoon Maldives»</b> и тебе доступно сразу два частных острова, соединенных вместе живописным мостом. Отличный сервис, забота о твоём сне ( для американской сети этих резортов качество сна в приоритете). Десяток ресторанов с мировым именем и потрясающая кухня. Тренажерные залы, йога пространство, spa и потрясающие виды.
+						</p>
+					</div>
+					<div class="our-island__note">
+						<p>
+							*Это место организатор выбрала неслучайно. Благодаря удачной локации резорта мы сможем организовать для вас эксклюзивные поездки к самым редким подводным жителям Мальдив, а также отправиться отдохнуть и на другие частные острова.
+						</p>
+					</div>
+				</div>
+				<div class="our-island__slider splide">
+					<div class="our-island__slider--decor min-title">
+						тЫ БУДЕШЬ ЖИТЬ ЗДЕСЬ
+						<img src="img/index/our-island/decor-arrow.svg" width="0" height="0" loading="lazy" alt="">
+					</div>
+					<div class="our-island__slider--wrapper splide__track">
+						<div class="our-island__slider--list splide__list">
+							<div class="our-island__slider--slide our-island__slide splide__slide">
+								<div class="our-island__slide--image">
+									<picture>
+										<source srcset="img/index/our-island/our-island-image-1.avif" type="image/avif">
+										<source srcset="img/index/our-island/our-island-image-1.webp" type="image/webp">
+										<img src="img/index/our-island/our-island-image-1.jpg" alt="" width="1560" height="580" loading="lazy">
+									</picture>
+								</div>
+							</div>
+							<div class="our-island__slider--slide our-island__slide splide__slide">
+								<div class="our-island__slide--image">
+									<picture>
+										<source srcset="img/index/our-island/our-island-image-2.avif" type="image/avif">
+										<source srcset="img/index/our-island/our-island-image-2.webp" type="image/webp">
+										<img src="img/index/our-island/our-island-image-2.jpg" alt="" width="1560" height="580" loading="lazy">
+									</picture>
+								</div>
+							</div>
+							<div class="our-island__slider--slide our-island__slide splide__slide">
+								<div class="our-island__slide--image">
+									<picture>
+										<source srcset="img/index/our-island/our-island-image-3.avif" type="image/avif">
+										<source srcset="img/index/our-island/our-island-image-3.webp" type="image/webp">
+										<img src="img/index/our-island/our-island-image-3.jpg" alt="" width="1560" height="580" loading="lazy">
+									</picture>
+								</div>
+							</div>
+							<div class="our-island__slider--slide our-island__slide splide__slide">
+								<div class="our-island__slide--image">
+									<picture>
+										<source srcset="img/index/our-island/our-island-image-4.avif" type="image/avif">
+										<source srcset="img/index/our-island/our-island-image-4.webp" type="image/webp">
+										<img src="img/index/our-island/our-island-image-4.jpg" alt="" width="1560" height="580" loading="lazy">
+									</picture>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="our-island__slider--nav splide__arrows">
+						<button class="our-island__slider--arrow splide__arrow splide__arrow--prev" title="Предыдущий слайд">
+							<svg width="77" height="23" viewBox="0 0 77 23">
+								<use xlink:href="img/sprites.svg#slider-arrow-prev"></use>
+							</svg>
+						</button>
+						<button class="our-island__slider--arrow splide__arrow splide__arrow--next" title="Следующий слайд">
+							<svg width="77" height="23" viewBox="0 0 77 23">
+								<use xlink:href="img/sprites.svg#slider-arrow-next"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</section>
+			<section class="program container" id="program">
+				<h2 class="program__title title">
+					Часть дней из программы
+				</h2>
+				<div class="program__nav splide">
+					<div class="program__nav--track splide__track">
+						<ul class="program__nav--list splide__list">
+							<li class="program__nav--item splide__slide">
+								День 2
+							</li>
+							<li class="program__nav--item splide__slide">
+								День 3
+							</li>
+							<li class="program__nav--item splide__slide">
+								День 4
+							</li>
+							<li class="program__nav--item splide__slide">
+								День 5
+							</li>
+							<li class="program__nav--item splide__slide">
+								День 6
+							</li>
+							<li class="program__nav--item splide__slide">
+								День 7
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="program__slider splide">
+					<div class="program__slider--track splide__track">
+						<div class="program__slider--list splide__list">
+							<div class="program__block splide__slide _active">
+								<div class="program__block--image">
+									<div class="program__block--imaeg-body image-body">
+										<picture>
+											<source srcset="img/index/programm/programm-image-1.avif" type="image/avif">
+											<source srcset="img/index/programm/programm-image-1.webp" type="image/webp">
+											<img src="img/index/programm/programm-image-1.jpg" alt="" width="731" height="586" loading="lazy">
+										</picture>
+									</div>
+								</div>
+								<div class="program__block--content">
+									<h3 class="min-title">
+										День 2
+									</h3>
+									<ul>
+										<li><b>6:30-8:00</b> - Утренние практики с Алексеем Горбачевым</li>
+										<li><b>8:00-10:00</b> - Завтрак</li>
+										<li><b>10:00-12:00</b> - Чилл на острове, SPA</li>
+										<li><b>C 13:30</b> - Свободное время, обед</li>
+										<li><b>18:00</b> - Энергодыхание</li>
+										<li><b>19:00</b> - Совместный ужин</li>
+									</ul>
+								</div>
+							</div>
+							<div class="program__block splide__slide">
+								<div class="program__block--image">
+									<div class="program__block--imaeg-body image-body">
+										<picture>
+											<source srcset="img/index/programm/programm-image-2.avif" type="image/avif">
+											<source srcset="img/index/programm/programm-image-2.webp" type="image/webp">
+											<img src="img/index/programm/programm-image-2.jpg" alt="" width="731" height="586" loading="lazy">
+										</picture>
+									</div>
+								</div>
+								<div class="program__block--content">
+									<h3 class="min-title">
+										День 3
+									</h3>
+									<ul>
+										<li><b>6:30-8:00</b> - Утренние практики с Алексеем Горбачевым</li>
+										<li><b>8:00-10:00</b> - Завтрак</li>
+										<li><b>10:00-11:30</b> - Лекция с Алексеем Горбачевым</li>
+										<li><b>12:00-16:00</b> - Едем снорклить в два зрелещных спота</li>
+										<li><b>16:00-18:00</b> - Свободное время</li>
+										<li><b>18:00</b> - Энергодыхание</li>
+										<li><b>19:00</b> - Ужин</li>
+									</ul>
+								</div>
+							</div>
+							<div class="program__block splide__slide">
+								<div class="program__block--image">
+									<div class="program__block--imaeg-body image-body">
+										<picture>
+											<source srcset="img/index/programm/programm-image-3.avif" type="image/avif">
+											<source srcset="img/index/programm/programm-image-3.webp" type="image/webp">
+											<img src="img/index/programm/programm-image-3.jpg" alt="" width="731" height="586" loading="lazy">
+										</picture>
+									</div>
+								</div>
+								<div class="program__block--content">
+									<h3 class="min-title">
+										День 4
+									</h3>
+									<ul>
+										<li><b>6:30-8:00</b> - Утренние практики с Алексеем Горбачевым</li>
+										<li><b>8:00-10:00</b> - Завтрак</li>
+										<li><b>10:00-18:00</b> - Отдых на территории другого частного острова. В этот день ты увидишь насколько разными могут быть Мальдивы даже на ощупь песка млм красоты их лагуны. На своей лодке с нашим капитаном мы поедем отдыхать на другой частный остров. Там же. На берегу, мы проведем лекцию с Алексеем на Энергодыхание.</li>
+										<li><b>18:30</b> - Возвращаемся на наш остров</li>
+										<li><b>19:30</b> - Ужин с живой музыкой</li>
+									</ul>
+								</div>
+							</div>
+							<div class="program__block splide__slide">
+								<div class="program__block--image">
+									<div class="program__block--imaeg-body image-body">
+										<picture>
+											<source srcset="img/index/programm/programm-image-4.avif" type="image/avif">
+											<source srcset="img/index/programm/programm-image-4.webp" type="image/webp">
+											<img src="img/index/programm/programm-image-4.jpg" alt="" width="731" height="586" loading="lazy">
+										</picture>
+									</div>
+								</div>
+								<div class="program__block--content">
+									<h3 class="min-title">
+										День 5
+									</h3>
+									<ul>
+										<li><b>6:30-8:00</b> - Утренние практики с Алексеем Горбачевым</li>
+										<li><b>8:00-10:00</b> - Завтрак</li>
+										<li><b>10:00-17:00</b> - Отправляемся в уникальное путешествие! Только несколько месяцев в году на Мальдивы, в залив Ханифару, охраняемый Юнеско, приплывает самое большое скопление мант в мире! Это зрелище, которое не передать словами! Тебе удасться не только увидеть их, но и поплавать с этими двухметровыми мистическими существами, по пути к Атоллу Баа ты увидишь необитаемые острова, а также стаи дельфинов.</li>
+										<li><b>18:30</b> - Возвращаемся на наш остров</li>
+										<li><b>19:00</b> - Ужин</li>
+									</ul>
+								</div>
+							</div>
+							<div class="program__block splide__slide">
+								<div class="program__block--image">
+									<div class="program__block--imaeg-body image-body">
+										<picture>
+											<source srcset="img/index/programm/programm-image-5.avif" type="image/avif">
+											<source srcset="img/index/programm/programm-image-5.webp" type="image/webp">
+											<img src="img/index/programm/programm-image-5.jpg" alt="" width="731" height="586" loading="lazy">
+										</picture>
+									</div>
+								</div>
+								<div class="program__block--content">
+									<h3 class="min-title">
+										День 6
+									</h3>
+									<ul>
+										<li><b>6:30-8:00</b> - Утренние практики с Алексеем Горбачевым</li>
+										<li><b>8:00-10:00</b> - Завтрак</li>
+										<li><b>10:00-11:30</b> - Лекция с Алексеем Горбачевым</li>
+										<li><b>12:00-18:00</b> - Отдыхаем на территории модного частного острова резорта KUDA VILINGILI, который славится не только высоким сервисом, лаконичным и спокойным дизайном, но и своей знаменитой на весь мир волной Chikens, которую прилетают покорить даже серферы мирового класса. Вся инфраструктура острова, кабаны, обед (сет меню от итальянского шеф повара) включены в этот день отдыха. На этом частном острове, на закате, проведем практики энергодыхания, а потом возвращаемся на наш остров к ужину.</li>
+									</ul>
+								</div>
+							</div>
+							<div class="program__block splide__slide">
+								<div class="program__block--image">
+									<div class="program__block--imaeg-body image-body">
+										<picture>
+											<source srcset="img/index/programm/programm-image-6.avif" type="image/avif">
+											<source srcset="img/index/programm/programm-image-6.webp" type="image/webp">
+											<img src="img/index/programm/programm-image-6.jpg" alt="" width="731" height="586" loading="lazy">
+										</picture>
+									</div>
+								</div>
+								<div class="program__block--content">
+									<h3 class="min-title">
+										День 7
+									</h3>
+									<ul>
+										<li><b>6:30-8:00</b> - Утренние практики с Алексеем Горбачевым</li>
+										<li><b>8:00-9:00</b> - Завтрак</li>
+										<li><b>9:00</b> - в это время наш капитан приплывает к острову, чтобы отвезти в другой атолл мальдив - ВААУВУ. здесь ты нырнёшь к затонувшему кораблю в очень живописной лагуне. а после поплаваешь с десятками двухметровых акул нянек! это абсолютно безопасно и невероятно зрелищно!</li>
+										<li><b>Около 16:00</b> - мы возвращаемся обратно на остров, чтобы на закате провести завершающую лекцию и практику энергодыхания.</li>
+										<li><b>19:30</b> - Прощальный совместный ужин</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="tariffs container">
+				<h2 class="tariffs__title title">
+					Пакеты
+				</h2>
+				<div class="tariffs__slider splide">
+					<div class="tariffs__slider--track splide__track">
+						<ul class="tariffs__list splide__list">
+							<li class="tariffs__card splide__slide">
+								<h3 class="tariffs__min-title min-title">
+									СТАНДАРТ плюс
+								</h3>
+								<ul>
+									<li>
+										Одноместное проживание в номере на пляже с видом на море
+									</li>
+									<li>
+										Трансфер аэропорт - остров - аэропорт (скоростная лодка)
+									</li>
+									<li>
+										Налоги и сборы, страховка
+									</li>
+									<li>
+										Питание завтраки, обеды и ужины
+									</li>
+									<li>
+										Поездка в лагуну дельфинов
+									</li>
+									<li>
+										Уникальная поездка: плавание с сотней мант в заливе ханифару
+									</li>
+									<li>
+										Плавание у затонувшего судна в живописной лагуне
+									</li>
+									<li>
+										Поездка в секретную локацию, где живут сотни скатов, с которыми можно поплавать
+									</li>
+									<li>
+										Плавание с десятками дружелюбных двухметровых акул-нянек
+									</li>
+									<li>
+										Снорклинг с рифовыми акулами и черепахами
+									</li>
+									<li>
+										Сопровождение профессиональных инструкторов, капитана и все снаряжений в дни поездок в океан (маски, ласты, жилеты) + бесплатное обучение, если никогда не снорклили
+									</li>
+									<li>
+										Подводная съемка
+									</li>
+									<li>
+										Гид по всей программе
+									</li>
+									<li>
+										Полная подготовка вас в путешествие, курирование на всех этапах
+									</li>
+								</ul>
+								<div class="tariffs__price">
+									<strong>12.500 $</strong><del>15.500 $</del>
+									<span>*цена до 10 мая</span>
+								</div>
+							</li>
+							<li class="tariffs__card _accent splide__slide">
+								<h3 class="tariffs__min-title min-title">
+									Платинум
+								</h3>
+								<ul>
+									<li>
+										Одноместное проживание в номере на пляже с видом на море
+									</li>
+									<li>
+										Трансфер аэропорт - остров - аэропорт (скоростная лодка)
+									</li>
+									<li>
+										Налоги и сборы, страховка
+									</li>
+									<li>
+										Питание завтраки, обеды и ужины
+									</li>
+									<li>
+										Поездка в лагуну дельфинов
+									</li>
+									<li>
+										Уникальная поездка: плавание с сотней мант в заливе ханифару
+									</li>
+									<li>
+										Плавание у затонувшего судна в живописной лагуне
+									</li>
+									<li>
+										Поездка в секретную локацию, где живут сотни скатов, с которыми можно поплавать
+									</li>
+									<li>
+										Плавание с десятками дружелюбных двухметровых акул-нянек
+									</li>
+									<li>
+										Снорклинг с рифовыми акулами и черепахами
+									</li>
+									<li>
+										Сопровождение профессиональных инструкторов, капитана и все снаряжений в дни поездок в океан (маски, ласты, жилеты) + бесплатное обучение, если никогда не снорклили
+									</li>
+									<li>
+										Подводная съемка
+									</li>
+									<li>
+										Гид по всей программе
+									</li>
+									<li>
+										Полная подготовка вас в путешествие, курирование на всех этапах
+									</li>
+									<li>
+										<mark>2 личные сессии во время ретрита</mark>
+									</li>
+									<li>
+										<mark>2 чек апа в течение месяца после ретрита</mark>
+									</li>
+								</ul>
+								<div class="tariffs__price">
+									<strong>20.000 $</strong><del>25.000 $</del>
+									<span>*цена до 10 мая</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tariffs__footer">
+					<div class="tariffs__note">*Для подписчиков сообщества пробуждения действует специальное предложение</div>
+					<a href="#" class="tariffs__btn btn">
+						Получить полную программу
+					</a>
+				</div>
+			</section>
+			<section class="get-details container" id="get-details">
+				<div class="get-details__bg image-body">
+					<picture>
+						<source srcset="img/index/get-details/get-details-image.avif" type="image/avif">
+						<source srcset="img/index/get-details/get-details-image.webp" type="image/webp">
+						<img src="img/index/get-details/get-details-image.jpg" alt="" width="1560" height="717" loading="lazy">
+					</picture>
+				</div>
+				<form action="#" class="get-details__form">
+					<h2 class="get-details__title title">
+						Хочу узнать детали
+					</h2>
+					<div class="get-details__text">
+						<p>
+							Оставляй контакты, и команда свяжется с тобой в ближайшее время
+						</p>
+					</div>
+					<div class="get-details__wrapper">
+						<label>
+							<input type="tel" name="phone" required placeholder="Телефон" class="input tel-constructor-input" data-tc-sample=" (xx) xxx-xx-xx" data-tc-country-code="380" data-tc-minlength="9" data-tc-error-class="_error" data-tc-plus="true">
+						</label>
+						<label>
+							<input type="text" name="your-name" required placeholder="Имя" class="input">
+						</label>
+						<button class="get-details__submit" type="submit">
+							Подать заявку
+						</button>
+					</div>
+				</form>
+			</section>
+			<section class="details container">
+				<h2 class="visually-hidden">
+					Детали
+				</h2>
+				<div class="details__nav splide">
+					<div class="details__nav--track splide__track">
+						<ul class="details__nav--list splide__list">
+							<li class="splide__slide">
+								Дополнительные услуги
+							</li>
+							<li class="splide__slide">
+								Что не включено в тур?
+							</li>
+							<li class="splide__slide">
+								Что включено в тур?
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="details__slider splide">
+					<div class="details__slider--track splide__track">
+						<div class="details__slider--list splide__list">
+							<div class="details__block splide__slide">
+								<ul class="details__list number-list">
+									<li>
+										<p>
+											Скидка на индивидуальный тур (до /после тура) <br>
+											<span>*рассчитывается в зависимости от маршрута</span>
+										</p>
+									</li>
+									<li>
+										<p>
+											Изменения дат бронирования ваших билетов
+										</p>
+									</li>
+									<li>
+										<p>Обмен и возврат билетов</p>
+									</li>
+									<li>
+										<p>Настройка расширенной страховки (Увелечение суммы страхования и дополнительные опции)</p>
+									</li>
+									<li>
+										<p>Регистрация на рейс и отмена регистрации на рейс</p>
+									</li>
+								</ul>
+							</div>
+							<div class="details__block splide__slide">
+								<ul class="details__list close-list">
+									<li>
+										Авиаперелет (мы с удовольствием поможем подобрать оптимальный перелет из вашего города)
+									</li>
+									<li>
+										Личные расходы
+									</li>
+								</ul>
+							</div>
+							<div class="details__block splide__slide">
+								<ul class="details__list check-list">
+									<li>
+										Одноместное проживание в номере на пляже с видом на море категории «номер делюкс»
+									</li>
+									<li>
+										Трансфер аэропорт - остров - аэропорт (скоростная лодка)
+									</li>
+									<li>
+										Уникальная поездка: плавание с сотней мант в заливе ханифару
+									</li>
+									<li>
+										Питание завтраки, обеды и ужины
+									</li>
+									<li>
+										Поездка в лагуну дельфинов
+									</li>
+									<li>
+										Налоги и сборы, страховка
+									</li>
+									<li>
+										Плавание у затонувшего судна в живописной лагуне
+									</li>
+									<li>
+										Поездка в секретную локацию, где живут сотни скатов, с которыми можно поплавать
+									</li>
+									<li>
+										Плавание с десятками дружелюбных двухметровых акул-нянек
+									</li>
+									<li>
+										Снорклинг с рифовыми акулами и черепахами
+									</li>
+									<li>
+										Полная подготовка вас в путешествие, курирование на всех этапах
+									</li>
+									<li>
+										Сопровождение профессиональных инструкторов, капитана и все снаряжений в дни поездок в океан (маски, ласты, жилеты) + бесплатное обучение, если никогда не снорклили
+									</li>
+									<li>
+										Гид по всей программе
+									</li>
+									<li>
+										Подводная съемка
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer container">
+			<nav class="footer__nav">
+				<ul>
+					<li>
+						<a href="#tour" class="btn-to-scroll">
+							Тур для тебя
+						</a>
+					</li>
+					<li>
+						<a href="#our-island" class="btn-to-scroll">
+							Наш остров
+						</a>
+					</li>
+					<li>
+						<a href="#program" class="btn-to-scroll">
+							Программа
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="footer__contact">
+				<svg width="80" height="80" viewBox="0 0 80 80" class="footer__contact--icon">
+					<use xlink:href="img/sprites.svg#whatsapp"></use>
+				</svg>
+				<a href="#" class="footer__contact--link btn">
+					WhatsApp
+				</a>
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/libs.min.js"></script>
+	<script src="js/main.min.js"></script>
+
+</body>
+
+</html>

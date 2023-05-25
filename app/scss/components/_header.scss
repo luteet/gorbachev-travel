@@ -1,0 +1,40 @@
+.header {
+	position: absolute;
+	left: 0; top: 0;
+	width: 100%;
+
+	padding-top: 27px; padding-bottom: 27px;
+
+	@include _992 {
+		padding-top: 53px; padding-bottom: 53px;
+	}
+
+	//padding-right: var(--popup-padding) !important;
+
+	//transform: translate(0, var(--pos));
+
+	//transition: transform .2s ease;
+
+	z-index: 3;
+
+	display: block;
+	text-align: center;
+
+	// .header__logo
+
+	&__logo {
+		
+		position: relative;
+		z-index: 4;
+		transform: translate3d(0,0,0);
+
+		// .header__logo--img
+		
+		&--img {
+			max-width: 100%;
+			@include _992 {
+				width: var(--width); height: var(--height);
+			}
+		}
+	}
+}

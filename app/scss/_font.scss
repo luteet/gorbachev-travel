@@ -1,0 +1,123 @@
+
+@font-face {
+	@include font-include('Igra Sans', 400, swap, normal, 'Igrasans');
+}
+
+@font-face {
+	@include font-include('Lena', 400, swap, normal, 'Lena');
+}
+
+@font-face {
+	@include font-include('Gilroy', 400, swap, normal, 'Gilroy-Regular');
+}
+
+@font-face {
+	@include font-include('Gilroy', 500, swap, normal, 'Gilroy-Medium');
+}
+
+@font-face {
+	@include font-include('Gilroy', 600, swap, normal, 'Gilroy-Semibold');
+}
+
+@font-face {
+	@include font-include('Gilroy', 700, swap, normal, 'Gilroy-Bold');
+}
+
+.main-title {
+	font-family: var(--title-font);
+	font-weight: 700;
+	line-height: 115%;
+
+	font-size: 1.875rem;
+
+	@include _768 {
+		font-size: 2.5rem;
+	}
+
+	@include _992 {
+		font-size: 3.125rem;
+	}
+}
+
+.title {
+	
+	font-family: var(--title-font);
+	font-weight: 400;
+	line-height: 115%;
+	color: var(--accent);
+
+	font-size: 1.25rem; // 20px
+	strong {
+		font-size: 2.25rem; // 36px
+		line-height: 100%;
+	}
+
+	@include _550 {
+		font-size: 1.875rem; // 30px
+		strong {
+			font-size: 3rem; // 48px
+		}
+	}
+
+	@include _768 {
+		font-size: 2.5rem; // 40px
+		strong {
+			font-size: 5rem; // 80px
+		}
+	}
+
+	@include _992 {
+		font-size: 3.4375rem; // 55px
+
+		strong {
+			font-size: 7.5rem; // 120px
+		}
+	}
+
+	strong {
+		font-family: 'Lena';
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+
+	@media (min-width: 1500px) {
+		strong {
+			font-size: 11.875rem; // 190px
+			line-height: 80%;
+		}
+	}
+
+}
+
+.min-title {
+	font-family: 'Lena';
+	font-weight: 400;
+	font-size: 1.125rem; // 18px
+
+	@include _550 {
+		font-size: 1.25rem; // 20px
+	}
+	
+	@include _768 {
+		font-size: 1.5rem;
+	}
+	
+	@include _992 {
+		font-size: 2rem; // 32px
+	}
+
+	line-height: 100%;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+
+.section-title {
+
+	font-family: var(--title-font);
+	font-weight: 700;
+
+}
+
+.txt-center {
+	text-align: center;
+}
