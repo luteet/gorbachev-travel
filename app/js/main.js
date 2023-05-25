@@ -218,6 +218,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		})
 	
 		detailsSlider.refresh()
+		programSlider.refresh()
 		
 	})
 
