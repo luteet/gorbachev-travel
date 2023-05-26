@@ -28,6 +28,22 @@
 			height: 100%;
 			object-fit: cover;
 		}
+
+		body {
+			animation: fadeInAnimation ease 0.5s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes fadeInAnimation {
+			0% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
 	</style>
 	<link rel="stylesheet" href="css/style-critical.min.css">
 	<link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'; this.onload=null;">
