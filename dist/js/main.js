@@ -3,10 +3,151 @@ function telConstructor(){function t(t){let e=t.getBoundingClientRect();return{t
 
 const 
 	body = document.querySelector('body'),
-	html = document.querySelector('html'),
-	menu = document.querySelectorAll('.header__burger, .header__nav, body'),
-	burger = document.querySelector('.header__burger'),
-	header = document.querySelector('.header');
+	html = document.querySelector('html');
+
+
+
+function Popup(arg) {
+
+	let body = document.querySelector('body'),
+		html = document.querySelector('html'),
+		saveHref = (typeof arg == 'object') ? (arg['saveHref']) ? true : false : false,
+		popupCheck = true,
+		popupCheckClose = true;
+
+	const removeHash = function () {
+		let uri = window.location.toString();
+		if (uri.indexOf("#") > 0) {
+			let clean_uri = uri.substring(0, uri.indexOf("#"));
+			window.history.replaceState({}, document.title, clean_uri);
+		}
+	}
+
+	const open = function (id, initStart) {
+
+		if (popupCheck) {
+			popupCheck = false;
+
+			let popup = document.querySelector(id);
+
+			if (popup) {
+
+				if(popup.classList.contains('popup')) {
+
+					body.classList.remove('_popup-active');
+					html.style.setProperty('--popup-padding', window.innerWidth - body.offsetWidth + 'px');
+					body.classList.add('_popup-active');
+
+					if (saveHref) history.pushState('', "", id);
+
+					setTimeout(() => {
+						if (!initStart) {
+							popup.classList.add('_active');
+							function openFunc() {
+								popupCheck = true;
+								popup.removeEventListener('transitionend', openFunc);
+							}
+							popup.addEventListener('transitionend', openFunc)
+						} else {
+							popup.classList.add('_transition-none');
+							popup.classList.add('_active');
+							popupCheck = true;
+						}
+
+					}, 0)
+				}
+
+			} else {
+				return new Error(`Not found "${id}"`)
+			}
+		}
+	}
+
+	const close = function (popupClose) {
+		if (popupCheckClose) {
+			popupCheckClose = false;
+
+			let popup
+			if (typeof popupClose === 'string') {
+				popup = document.querySelector(popupClose)
+			} else {
+				popup = popupClose.closest('.popup');
+			}
+
+			if (popup.classList.contains('_transition-none')) popup.classList.remove('_transition-none')
+
+			setTimeout(() => {
+				popup.classList.remove('_active');
+				function closeFunc() {
+					const activePopups = document.querySelectorAll('.popup._active');
+
+					if (activePopups.length < 1) {
+						body.classList.remove('_popup-active');
+						html.style.setProperty('--popup-padding', '0px');
+					}
+
+					if (saveHref) {
+						removeHash();
+						if (activePopups[activePopups.length - 1]) {
+							history.pushState('', "", "#" + activePopups[activePopups.length - 1].getAttribute('id'));
+						}
+					}
+
+					popupCheckClose = true;
+					popup.removeEventListener('transitionend', closeFunc)
+				}
+
+				popup.addEventListener('transitionend', closeFunc)
+
+			}, 0)
+
+		}
+	}
+
+	return {
+
+		open: function (id) {
+			open(id);
+		},
+
+		close: function (popupClose) {
+			close(popupClose)
+		},
+
+		init: function () {
+
+			let thisTarget
+			body.addEventListener('click', function (event) {
+
+				thisTarget = event.target;
+
+				let popupOpen = thisTarget.closest('.open-popup');
+				if (popupOpen) {
+					event.preventDefault();
+					open(popupOpen.getAttribute('href'))
+				}
+
+				let popupClose = thisTarget.closest('.popup-close');
+				if (popupClose) {
+					close(popupClose)
+				}
+
+			});
+
+			if (saveHref) {
+				let url = new URL(window.location);
+				if (url.hash) {
+					open(url.hash, true);
+				}
+			}
+		},
+
+	}
+}
+
+const popup = new Popup();
+
+popup.init()
 
 
 // =-=-=-=-=-=-=-=-=-=- <image-aspect-ratio> -=-=-=-=-=-=-=-=-=-=-
@@ -43,10 +184,6 @@ body.addEventListener('click', function (event) {
 	
 		section = document.querySelector(btnToScroll.getAttribute('href'))
 	
-		menu.forEach(elem => {
-			elem.classList.remove('_mob-menu-active')
-		})
-	
 		if(section) {
 			section.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 		} else {
@@ -69,7 +206,6 @@ let windowWidth = 0;
 
 function resize() {
 
-	html.style.setProperty("--height-header", header.offsetHeight + "px");
 	html.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
 	if(windowWidth != window.innerWidth) {
 		windowWidth = window.innerWidth;
@@ -239,21 +375,78 @@ document.addEventListener( 'DOMContentLoaded', function () {
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
-/* 
-// =-=-=-=-=-=-=-=-=-=-=-=- <lazyload> -=-=-=-=-=-=-=-=-=-=-=-=
 
-new LazyLoad();
+// =-=-=-=-=-=-=-=-=-=-=-=- <Form> -=-=-=-=-=-=-=-=-=-=-=-=
 
-// =-=-=-=-=-=-=-=-=-=-=-=- </lazyload> -=-=-=-=-=-=-=-=-=-=-=-=
- */
+const form = document.querySelectorAll('.get-details__form');
+form.forEach(form => {
+	form.addEventListener('submit', function (event) {
+		
+		event.preventDefault();
 
-/* 
-// =-=-=-=-=-=-=-=-=-=-=-=- <animation> -=-=-=-=-=-=-=-=-=-=-=-=
+		const inputs = form.querySelectorAll('input');
 
-AOS.init({
-	disable: "mobile",
-});
+		let errorCheck = false;
+			  
+		inputs.forEach(input => {
+			if(input.value == "" && input.required) {
+				input.classList.add('_error');
 
-// =-=-=-=-=-=-=-=-=-=-=-=- </animation> -=-=-=-=-=-=-=-=-=-=-=-=
+				errorCheck = true;
+			}
 
-*/
+			input.addEventListener('blur', function () {
+				input.classList.remove('_error');
+			})
+		})
+
+		if(!errorCheck) {
+
+			let paramsString = "";
+			inputs.forEach((input, index) => {
+				
+				if(input.value) {
+					let lastChar = (index == inputs.length-1) ? "" : "&";
+					paramsString += input.getAttribute("name") + "=" + input.value + lastChar;
+				}
+			})
+
+			
+	
+			// Создаем экземпляр класса XMLHttpRequest
+			const request = new XMLHttpRequest();
+	
+			// Указываем путь до файла на сервере, который будет обрабатывать наш запрос 
+			const url = form.getAttribute('action');
+			 
+			
+			request.open("POST", url, true);
+			 
+			//В заголовке говорим что тип передаваемых данных закодирован. 
+			request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			 
+			request.addEventListener("readystatechange", () => {
+	
+				if(request.readyState === 4 && request.status === 200) {       
+					if(request.responseText == "true") {
+						const message = document.querySelector('.succes__message');
+						message.classList.remove('_loading');						
+					}
+				}
+			});
+
+			const message = document.querySelector('.succes__message');
+			message.classList.add('_loading');
+			popup.open('#succes-popup')
+
+			setTimeout(() => {
+				request.send(paramsString);
+			},300)
+			
+		}
+	})
+})
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </Form> -=-=-=-=-=-=-=-=-=-=-=-=
+
+

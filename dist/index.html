@@ -4,7 +4,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Gorbachev Travel</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
 	<style>
 		.image-body {
 			width: 100%;
@@ -45,8 +54,11 @@
 						<img src="img/index/hero/hero-image.jpg" alt="" width="0" height="0" loading="lazy">
 					</picture>
 				</div>
-				<h1 class="hero__title title">
-					Пробуждение <strong>На Мальдивах</strong> <span style="text-align: right;">с Алексеем Горбачевым</span>
+				<h1 class="hero__title title visible-on-tablet">
+					Пробуждение на <strong>Мальдивах</strong><span style="text-align: right;">с Алексеем Горбачевым</span>
+				</h1>
+				<h1 class="hero__title title hide-on-tablet">
+					Пробуждение <strong>На Мальдивах</strong><span style="text-align: right;">с Алексеем Горбачевым</span>
 				</h1>
 				<div class="hero__application">
 					<strong class="hero__application--date">
@@ -654,7 +666,7 @@
 				</div>
 				<div class="tariffs__footer">
 					<div class="tariffs__note">*Для подписчиков сообщества пробуждения действует специальное предложение</div>
-					<a href="#" class="tariffs__btn btn">
+					<a href="#get-details" class="tariffs__btn btn btn-to-scroll">
 						Получить полную программу
 					</a>
 				</div>
@@ -667,7 +679,7 @@
 						<img src="img/index/get-details/get-details-image.jpg" alt="" width="1560" height="717" loading="lazy">
 					</picture>
 				</div>
-				<form action="#" class="get-details__form">
+				<form method="post" action="mail.php" class="get-details__form">
 					<h2 class="get-details__title title">
 						Хочу узнать детали
 					</h2>
@@ -781,10 +793,10 @@
 										Полная подготовка вас в путешествие, курирование на всех этапах
 									</li>
 									<li>
-										Сопровождение профессиональных инструкторов, капитана и все снаряжений в дни поездок в океан (маски, ласты, жилеты) + бесплатное обучение, если никогда не снорклили
+										Гид по всей программе
 									</li>
 									<li>
-										Гид по всей программе
+										Сопровождение профессиональных инструкторов, капитана и все снаряжений в дни поездок в океан (маски, ласты, жилеты) + бесплатное обучение, если никогда не снорклили
 									</li>
 									<li>
 										Подводная съемка
@@ -821,11 +833,41 @@
 				<svg width="80" height="80" viewBox="0 0 80 80" class="footer__contact--icon">
 					<use xlink:href="img/sprites.svg#whatsapp"></use>
 				</svg>
-				<a href="#" class="footer__contact--link btn">
+				<a href="https://api.whatsapp.com/send/?phone=971588161627&text&type=phone_number&app_absent=0" target="_blank" class="footer__contact--link btn">
 					WhatsApp
 				</a>
 			</div>
 		</footer>
+	</div>
+
+	<div class="succes popup" id="succes-popup">
+		<div class="succes__wrapper popup-wrapper">
+			<div class="succes__bg popup-bg popup-close"></div>
+			<div class="succes__body popup-body">
+				<button type="button" class="succes__close-btn popup-close-btn popup-close" title="Закрыть">
+					<svg width="20" height="19" viewBox="0 0 20 19">
+						<use xlink:href="img/sprites.svg#close"></use>
+					</svg>
+				</button>
+				<div class="succes__message">
+					<div class="succes__message--block">
+						<h2 class="succes__title title _min">
+							Заявка отправлена
+						</h2>
+						<div class="succes__text">
+							<p>
+								В ближайшее время с Вами свяжется наш менеджер
+							</p>
+						</div>
+					</div>
+					<div class="succes__message--block">
+						<div class="succes__loader">
+							<div class="succes__loader--element"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<script src="js/libs.min.js"></script>

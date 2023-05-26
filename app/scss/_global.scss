@@ -31,7 +31,7 @@ body {
 	display: flex;
 	flex-direction: column;
 
-	//padding-right: var(--popup-padding);
+	padding-right: var(--popup-padding);
 
 	&._mob-menu-active {
 		overflow: hidden;
@@ -172,6 +172,18 @@ section {
 	overflow: hidden;
 }
 
+.visible-on-tablet {
+	@include _768 {
+		display: none;
+	}
+}
+
+.hide-on-tablet {
+	@media (max-width: 767px) {
+		display: none;
+	}
+}
+
 .number-list {
 	counter-reset: number_list;
 	
@@ -260,4 +272,8 @@ section {
 
 		}
 	}
+}
+
+.splide.is-focus-in .splide__slide:focus, .splide__slide:focus-visible {
+	outline: 0 !important;
 }

@@ -67,7 +67,9 @@
 	&__application {
 
 		margin-top: 38px;
-		align-self: center;
+		@include _550 {
+			align-self: center;
+		}
 
 		padding: 17px 10px 5px 10px;
 		background: #FFFFFF;
@@ -131,6 +133,10 @@
 
 		&--btn {
 			margin-top: 10px;
+			width: 100%;
+			@include _550 {
+				width: auto;
+			}
 			@include _768 {
 				margin-top: 0;
 			}
